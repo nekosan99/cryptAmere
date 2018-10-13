@@ -29,6 +29,8 @@ public class Controller  {
     @FXML
     private Button go;
 
+    ////partie gauche
+
     public void getFilePath(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         File selectedFile = fileChooser.showOpenDialog(null);
@@ -56,7 +58,7 @@ public class Controller  {
         }
         else {
             //actionStatus.setText("File selection cancelled.");
-            System.out.println("Button picture cancel clicked to9o");
+            System.out.println("Button picture cancel clicked too");
         }
 
     }
@@ -71,6 +73,35 @@ public class Controller  {
             System.out.println(selectedDirectory.getAbsolutePath());
         }
     }
+
+    ////partie droite
+
+    public void givePicture(ActionEvent actionEvent){
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+
+            //actionStatus.setText("File selected: " + selectedFile.getName());
+            System.out.println("Button picture clicked");
+        }
+        else {
+            //actionStatus.setText("File selection cancelled.");
+            System.out.println("Button picture cancel clicked too");
+        }
+    }
+
+    public void givedirectory(ActionEvent actionEvent){
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        File selectedDirectory = directoryChooser.showDialog(null);
+
+        if(selectedDirectory == null){
+            //No Directory selected
+        }else{
+            System.out.println(selectedDirectory.getAbsolutePath());
+        }
+    }
+    ///////action go
 
     public void getGo(ActionEvent actionEvent) {
 

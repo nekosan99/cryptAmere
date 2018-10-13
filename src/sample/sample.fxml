@@ -21,8 +21,8 @@
          </children></Pane>
        <Pane layoutX="300.0" layoutY="96.0" prefHeight="326.0" prefWidth="280.0" style="-fx-background-color: #3498db;">
          <children>
-            <Button layoutX="15.0" layoutY="40.0" mnemonicParsing="false" style="-fx-background-color: #ecf0f1;" text="Image" />
-            <Button layoutX="15.0" layoutY="130.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="250.0" text="Repertoire de sortie" />
+            <Button fx:id="givePicture" layoutX="15.0" layoutY="40.0" mnemonicParsing="false" style="-fx-background-color: #ecf0f1;" text="Image" onAction="#givePicture"/>
+            <Button fx:id="givedirectory" layoutX="15.0" layoutY="130.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="250.0" text="Repertoire de sortie" onAction="#givedirectory"/>
             <TextArea layoutX="15.0" layoutY="192.0" prefHeight="74.0" prefWidth="250.0" />
             <CheckBox layoutX="96.0" layoutY="279.0" mnemonicParsing="false" selected="true" style="-fx-background-color: #ffffff;" text="Ouvrir fichier" />
             <Label layoutX="88.0" layoutY="176.0" style="-fx-background-color: #ffffff;" text="Fichier de sortie" />
