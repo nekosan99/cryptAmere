@@ -18,7 +18,7 @@ public class Controller  {
     private TextField cle;
 
     @FXML
-    private Button getFile;
+    private Button getText;
 
     @FXML
     private Button getPicture;
@@ -29,32 +29,48 @@ public class Controller  {
     @FXML
     private Button go;
 
+    private String enterPass = null;
+    private String outPutpass = null;
+    private String imageFile = null;
+    private String textFile = null;
+
+
+
+
     ////partie gauche
 
-    public void getFilePath(ActionEvent actionEvent) {
+    public void getTextPath(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
+
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TEXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
         File selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
 
-            //actionStatus.setText("File selected: " + selectedFile.getName());
-            System.out.println("Button file clicked");
+            textFile = selectedFile.getName();
+            System.out.println(textFile);
         }
         else {
             //actionStatus.setText("File selection cancelled.");
-            System.out.println("Button file cancel clicked too");
+            System.out.println("no path selected");
         }
 
     }
 
     public void getPicturePath(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Images", "*.*"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+        );
         File selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
 
-            //actionStatus.setText("File selected: " + selectedFile.getName());
-            System.out.println("Button picture clicked");
+            imageFile = selectedFile.getName();
+            System.out.println(imageFile);
         }
         else {
             //actionStatus.setText("File selection cancelled.");
@@ -101,11 +117,35 @@ public class Controller  {
             System.out.println(selectedDirectory.getAbsolutePath());
         }
     }
+
+    private static void configureFileChooser(
+            final FileChooser fileChooser) {
+        fileChooser.setTitle("View Pictures");
+        fileChooser.setInitialDirectory(
+                new File(System.getProperty("user.home"))
+        );
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("All Images", "*.*"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+        );
+    }
     ///////action go
 
     public void getGo(ActionEvent actionEvent) {
 
-        System.out.println("Button picture clicked");
+        if (textFile != null) {
+
+            if (imageFile != null) {
+                System.out.println("tout est ok");
+            }else{
+                System.out.println("Pas d'image selectioné");
+            }
+
+        } else {
+            System.out.println("Pas de fichier texte selectionéd");
         }
+
+    }
 
     }

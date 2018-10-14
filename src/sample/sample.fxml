@@ -12,7 +12,7 @@
    <children>
       <Pane layoutX="20.0" layoutY="96.0" prefHeight="326.0" prefWidth="280.0">
          <children>
-            <Button fx:id="getFile" layoutX="15.0" layoutY="40.0" mnemonicParsing="false" text="Fichier" onAction="#getFilePath" />
+            <Button fx:id="getText" layoutX="15.0" layoutY="40.0" mnemonicParsing="false" text="Fichier" onAction="#getTextPath" />
             <Button fx:id="getPicture" layoutX="15.0" layoutY="130.0" mnemonicParsing="false" text="Image" onAction="#getPicturePath" />
             <Button fx:id="getDirectory" layoutX="15.0" layoutY="220.0" mnemonicParsing="false" text="Sortie" onAction="#outPutDirectory" />
             <TextArea fx:id="txtFile" layoutX="74.0" layoutY="40.0" prefHeight="74.0" prefWidth="190.0 " text="Ouvrir fichier" />
